@@ -1,0 +1,43 @@
+---
+title: "Tripdown : un package pour créer des blogs de voyage"
+author: "C. Sauder et R. François"
+output: pdf_document
+---
+
+6 impasse Joseph Vidal
+34000 Montpellier
+
+```cecile.sauder@gmail.com```
+
+b Département de Biologie
+
+B-Institut
+
+B-Adresse
+
+```author2@institut.com```
+
+Mots clefs : Package, blogdown.
+
+
+- mini package gallery pour que chaque article comporte une gallerie de photos à la fin.
+- mettre une carte
+
+
+
+La longueur du résumé ne doit pas excéder 2 pages. Le résumé doit contenir
+
+1. le titre de la présentation,
+
+2. les noms des auteurs,
+
+3. les mots clefs,
+
+4. Les contacts des auteurs, incluant l’adresse postale et l’email.
+
+Des modèles Word, LibreOffice, LaTeX et RMarkdown pour la préparation des résumés sont disponibles sur le site web de la conférence. Une fois que le résumé est prêt, merci de le convertir en format PDF. Les autres types de fichiers ne seront pas acceptés. Chaque résumé devra être soumis en version électronique via le site web de la conférence.
+
+## Références
+[1] Liquet, B., Saracco, J. (2011). A criterion for selecting the number of slices and the dimension of the model in SIR and SAVE approaches. To appear in Computational Statistics.
+
+[2] Liquet, B., Saracco, J. (2008). Application of the bootstrap approach to the choice of dimension and the $\alpha$ parameter in the SIR$_\alpha$ method. Communications in Statistics - Simulation and Computation, 37(6), 1198-121
