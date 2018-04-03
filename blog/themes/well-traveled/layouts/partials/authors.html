@@ -1,0 +1,12 @@
+{{ if isset .Params "authors" }}
+{{ $count := len .Params.authors }}
+{{ if gt $count 0}}
+<p class="meta-authors">
+  
+{{ range $k, $v := .Params.authors }}
+<i class="fa fa-user "></i> {{.}}
+{{ end }}
+
+</p>
+{{ end }}
+{{ end }}

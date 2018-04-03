@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+
+<main class="list">
+    <header class="list__header">
+        <h1 class="list__title">{{ humanize .Title }}</h1>
+    </header>
+
+    <div class="list__entries">
+        {{ range .Data.Pages }}
+          {{ partial "section_summary.html" . }}
+        {{ end }}
+    </div>
+</main>
+
+{{ partial "footer.html" . }}

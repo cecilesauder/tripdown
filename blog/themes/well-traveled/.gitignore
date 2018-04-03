@@ -1,0 +1,12 @@
+### Intellij ###
+.idea/
+*.ipr
+*.iws
+*.iml
+
+### SublimeText ###
+*.sublime-workspace
+*.sublime-project
+
+### SASS ###
+.sass-cache

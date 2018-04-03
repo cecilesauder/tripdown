@@ -1,0 +1,146 @@
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+.section__title a { 
+  text-decoration: none ;
+}
+
+.section__entry:first-child {
+  flex: 0 1 calc(50% - 2rem) ;  
+  font-size: .8rem ;
+  margin-top: 2rem ;
+}
+
+.section__entry {
+  height: 430px ;
+  overflow-y: hidden ;
+}
+
+.section__narticles {
+  font-size: 0.8em;
+  color: rgb(177, 110, 255) ;
+}
+
+.section__nphotos{
+  font-size: 0.6em;
+  color: rgb(177, 110, 255) ;
+}
+
+.entry__summary__gallery{
+  overflow-y: hidden ;
+  padding: 10px ;
+  margin-top: 10px ;
+}
+
+.entry__author{
+  padding-top: 5px ;
+  text-align: right ;
+  font-size: smaller ;
+  color: #713a86;
+}
+
+.entry__title {
+  text-align: right ;
+}
+
+.list__entry{
+  margin-top: 20px ;
+}
+
+.section_mini_image{
+  float: left ;
+  margin-right: 10px ;
+  height: 140px ;
+}
+
+.entry__tags{ 
+  text-align: right ;
+  font-size: smaller ;
+}
+.entry__tags > a {
+  text-decoration: none ;  
+}
+
+
+.read_more {
+  text-align: right ;
+  font-style: italic ;
+}
+
+.text a {
+  text-decoration: none ;
+  border: none !important ;
+  color: #713a86 ;
+}
+
+.meta-tags{
+  text-align: right ;
+  padding-bottom: 10px ;
+  margin-top: 0;
+}
+
+.meta-authors{
+  text-align: right ;
+  margin-bottom: 0;
+}
+
+.article__text {
+  margin: 1em auto 0;
+}
+
+.section__entry, .section__name, .list__title, .article__title{
+  background: #FFFFFFCC ;
+  font-family: 'Indie Flower', cursive;
+}
+
+.section__name, .section__entries, .list__title, .article__title, .article__placement {
+  /* opacity: 0.8 ; */
+}
+
+.list__title, .entry__title a, .section__name a, .article__location, .header__link, h1, a, .section__link a {
+  color: #713a86;
+}
+
+.section__name > * {
+  opacity: 1 ;
+}
+
+.article__placement {
+  font-style: italic ;
+}
+
+.post-taxonomy-tag {
+  padding: 5px;
+}
+
+.post-taxonomy-author {
+  padding: 5px;
+}
+
+.entry__title {
+  font-size: 1.2em ;
+}
+
+.entry__summary{
+  font-size: 0.8em ;
+}
+
+.section__name {
+  font-size: 3em ;
+  font-family: 'Indie Flower', cursive;
+}
+
+.entry__title a {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.6em ;
+}
+
+.article__title {
+  font-size: 4em ;
+}
+
+.section__title {
+  font-family: 'Indie Flower', cursive;
+}

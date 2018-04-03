@@ -1,0 +1,54 @@
+{{ partial "header.html" . }}
+
+<main>
+    <article class="article">
+        <header class="article__header{{ if .Params.image }} article__header--image{{ end }}"{{ with .Params.image }} style="background-image: url({{ . }});"{{ end }}>
+            <h1 class="article__title">{{ .Title }}</h1>
+
+            <div class="article__placement">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, January 2, 2006" }}</time>
+              <div class="article__location">
+                {{ with .Params.location }} {{ . }}{{ end }}  
+              </div>
+              
+            </div>
+        </header>
+
+        <section class="article__text text">
+            {{ partial "authors.html" . }}
+            
+            {{ partial "tags.html" . }}
+  
+            {{ .Content }}
+            
+            {{ partial "gallery.html" . }}
+            
+        </section>
+
+        
+    </article>
+</main>
+
+<nav class="navigator">
+    <div class="navigator__intro"><strong>Continue reading</strong> stories from {{ humanize .Section }}...</div>
+    <div class="navigator__direction navigator__direction--previous">
+    {{ with .PrevInSection }}
+        <span class="navigator__direction-name">Previous</span>
+        <span class="navigator__direction-link"><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+        <div class="navigator__direction-summary text">
+            {{ .Summary }}
+        </div>
+    {{ end }}
+    </div>
+    <div class="navigator__direction navigator__direction--next">
+    {{ with .NextInSection }}
+        <span class="navigator__direction-name">Next</span>
+        <span class="navigator__direction-link"><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+        <div class="navigator__direction-summary text">
+            {{ .Summary }}
+        </div>
+    {{ end }}
+    </div>
+</nav>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,14 @@
+<article class="list__entry entry">
+    <h2 class="section__title">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    
+    {{ if .Params.gallery }}
+      <a href="{{ .Permalink }}">
+        <img src="{{.Params.gallery}}/header.jpg" class="section_mini_image" />
+      </a>
+    {{ end }}
+    
+    {{ partial "post_summary.html" . }}
+              
+</article>

@@ -1,12 +1,9 @@
 ---
 title: "Tripdown : un package pour créer des blogs de voyage"
-author: "Cécile Sauder"
+author: "C. Sauder et R. François"
 output: pdf_document
 ---
 
-6 impasse Joseph Vidal
-
-34000 Montpellier
 
 ```cecile.sauder@gmail.com```
 
@@ -25,6 +22,7 @@ créer un *voyage* dans ce blog, et enfin créer un article au sein de
 ce voyage. Les photos deployées sont redimensionnées via le package 
 magick [2] de façon à eviter un 
 temps de chargement trop long du site final. 
+
 
 ## Références
 [1] Yihui Xie, Amber Thomas, Alison Presmanes Hill (2018). blogdown: Creating Websites with R Markdown.

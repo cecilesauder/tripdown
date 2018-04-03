@@ -1,0 +1,16 @@
+metaDataFormat: yaml
+baseurl: /
+title: blog de voyage
+theme: well-traveled
+languageCode: "en-us"
+authors: "me"
+copyright: 'me'
+params:
+  logo: img/compass-rose.svg
+favicon:
+  image: favicon.png
+  type: image/png
+description: 'Travel blog.'
+error404:
+  title: Lost a page?
+  text: We couldn't find anything under the address you requested. You may want to start from the <a href="/">homepage</a> or go back and try another link.

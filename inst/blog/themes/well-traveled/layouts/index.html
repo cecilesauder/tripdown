@@ -1,0 +1,68 @@
+{{ partial "header.html" . }}
+
+<main>
+    {{ range (where .Site.Pages "Kind" "section") }}
+    <section class="section" id="section-{{ .Title | plainify | urlize }}"{{ with .Params.image }} style="background-image: url({{ . }});"{{ end }}>
+        <div class="section__content">
+            <div class="section__name">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              
+              <div class="section__narticles"><i class="fa fa-pencil"></i>&nbsp;{{ len .Data.Pages }} articles</div>
+              
+              {{ $npages := (len .Data.Pages) }}
+              {{ $.Scratch.Set "nphotos" 0 }}
+              
+              {{ range $k, $v := .Data.Pages }}
+                {{ $gallery := .Params.gallery }}
+                {{ $sourcePath := ( printf "static/%s" $gallery ) }}
+                {{ $files := readDir $sourcePath }}
+                {{ range $files }}
+                  {{ if ne .Name ".DS_Store" }}
+                    {{ $.Scratch.Add "nphotos" 1 }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              
+              <div class="section__nphotos"><i class="fa fa-image"></i>&nbsp;{{ $.Scratch.Get "nphotos" }} photos </div>
+              
+            </div>
+
+            <div class="section__entries">
+                {{ if eq (len .Data.Pages) 0 }}
+                <div class="section__entry text"><p>{{ with .Params.teaser }}{{ . | safeHTML }}{{ else }}Coming soon...{{ end }}</p></div>
+                {{ end }}
+                {{ range first 4 .Data.Pages }}
+                <article class="section__entry entry">
+                    <h3 class="entry__title">
+                      <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h3>
+                    
+                    {{ partial "post_summary.html" . }}
+                    
+                    <div class="entry__summary text">
+                      
+                      {{ if .Params.gallery }}
+                      {{ $gallery := .Params.gallery }}
+                      
+                      <div class="entry__summary__gallery">
+                        <a href="{{ .Permalink }}">
+                          <img src="{{ $gallery }}/header.jpg" width="100%"></img>
+                        </a>
+                      </div>
+                      {{ end }}
+                    
+                    </div>
+                </article>
+                {{ end }}
+                {{ if gt (len .Data.Pages) 3 }}
+                <div class="section__link">
+                    <a href="{{ .Permalink }}">See all {{ len .Data.Pages }} stories from {{ .Title }}</a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+</main>
+
+{{ partial "footer.html" . }}

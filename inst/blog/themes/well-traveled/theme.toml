@@ -1,0 +1,11 @@
+name = "Well Traveled"
+license = "MIT"
+licenselink = "https://github.com/mpaluchowski/hugo-well-traveled/blob/master/LICENSE"
+description = ""
+homepage = "https://travel.paluchowski.com/"
+tags = ["blog", "responsive", "minimal"]
+min_version = 0.18
+
+[author]
+  name = "Michał Paluchowski"
+  homepage = "https://michal.paluchowski.com/"

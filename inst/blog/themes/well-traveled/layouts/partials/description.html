@@ -1,0 +1,7 @@
+{{- if eq .Kind "home" -}}
+    {{ .Site.Params.description }}
+{{- else if eq .Kind "page" -}}
+    {{ trim (.Summary | plainify) "\n" }}
+{{- else -}}
+    Stories about {{ .Title }}
+{{- end -}}

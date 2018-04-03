@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="{{ .Site.BaseURL }}">
+
+    <title>{{ .Title }}{{ if eq .IsHome false }} - {{ .Site.Title }}{{ end }}</title>
+
+    {{ .Hugo.Generator }}
+
+    <meta name="description" content="{{ partial "description.html" . }}">
+
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ partial "description.html" . }}">
+    {{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ with .RSSLink }}<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ . }}">{{ end }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:500|PT+Serif:400,400i,700,700i&amp;subset=latin-ext">
+    <link rel="stylesheet" href="css/main.css">
+
+    {{ with .Site.Params.favicon -}}
+    <link rel="icon" href="{{ .image }}" type="{{ .type }}">
+    <link rel="apple-touch-icon" href="{{ .image }}">
+    {{- end }}
+
+    {{ template "_internal/google_analytics_async.html" . }}
+    
+    <!-- Bootstrap and Font Awesome css -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+    <!-- blueimp galery -->
+    <link rel="stylesheet" href="/lib/gallery/css/blueimp-gallery.min.css">
+    
+    <!-- custom css -->
+    <link rel="stylesheet" href="/css/travel.css">
+
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="header__links">
+        {{ if .IsHome }}<h1{{ else }}<div{{ end }} class="header__link header__title">
+            {{ with .Site.Params.logo -}}
+            <img class="header__logo" src="{{ . }}" alt="">
+            {{- end -}}
+            <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        {{ if .IsHome }}</h1{{ else }}</div{{ end }}>
+        {{- if and .IsPage (ne .Section "") -}}
+        <div class="header__link"><a href="{{ .Section | absURL }}">{{ humanize .Section }}</a></div>
+        {{ end }}
+    </nav>
+</header>

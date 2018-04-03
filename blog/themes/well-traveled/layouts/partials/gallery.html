@@ -1,0 +1,27 @@
+{{ if .Params.gallery }}
+
+<h3> Gallery : </h3>
+<div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+<div id="links">
+
+  {{ $gallery := .Params.gallery }}
+  {{ $sourcePath := ( printf "static/%s" $gallery ) }}
+  {{ $files := readDir $sourcePath }}
+  {{ range $files }}
+    {{ if ne .Name ".DS_Store" }}
+      {{ if ne .Name "header.jpg" }}
+        <a href="{{ $gallery }}/{{ .Name }}"></a>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+</div>
+{{ end }}
