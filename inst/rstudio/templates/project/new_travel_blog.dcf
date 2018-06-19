@@ -1,0 +1,14 @@
+Binding: new_travel_blog
+Title: Travel Blog
+OpenFiles: INDEX
+
+Parameter: text
+Widget: TextInput
+Label: Text Input
+Default: Travel blog
+
+Parameter: file
+Widget: FileInput
+Label: Travel image
+Default: ~/
+Position: right
