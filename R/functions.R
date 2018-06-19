@@ -1,13 +1,14 @@
 #' new_travel_blog
 #'
 #' Create a new travel blog
+#'
+#' @param dir target directory where to put the new blog
+#'
 #' @export
 #' @examples
-#' new_travel_blog()
-new_travel_blog <-function(){
-# copy the blog structure into the working directory
-  file.copy(from= list.files(system.file("blog", package = "tripdown")), to = getwd(), recursive = TRUE)
-
+#' new_travel_blog("blog")
+new_travel_blog <-function(dir){
+  fs::dir_copy(system.file("blog", package = "tripdown"), dir)
 }
 
 
