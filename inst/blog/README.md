@@ -1,3 +1,2 @@
-# Blog de voyage
+# Travel blog
 
-https://travel.purrple.cat
