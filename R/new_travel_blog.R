@@ -3,10 +3,10 @@
 #'
 #' Create a new travel blog
 #'
-#'
+#' @import fs
 #'
 #' @param path target directory where to put the new blog
-#'
+#' @param ... template input rstudio
 #'
 
 new_travel_blog <-function(path, ...){
@@ -40,6 +40,8 @@ new_travel_blog <-function(path, ...){
 
 
   # copy the blog structure into the path
-  fs::dir_copy(system.file("blog", package = "templatetest"), path)
+  source_directory <- system.file("blog", package = "tripdown")
+  dir_copy(source_directory, path)
+
 
 }
