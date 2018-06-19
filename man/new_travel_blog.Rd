@@ -4,11 +4,14 @@
 \alias{new_travel_blog}
 \title{new_travel_blog}
 \usage{
-new_travel_blog()
+new_travel_blog(dir)
+}
+\arguments{
+\item{dir}{target directory where to put the new blog}
 }
 \description{
 Create a new travel blog
 }
 \examples{
-new_travel_blog()
+new_travel_blog("blog")
 }
