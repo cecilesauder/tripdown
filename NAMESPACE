@@ -3,3 +3,5 @@
 export(new_trip)
 export(new_trip_post)
 import(fs)
+import(magrittr)
+import(purrr)

@@ -4,6 +4,8 @@
 #' Create a new travel blog
 #'
 #' @import fs
+#' @import purrr
+#' @import magrittr
 #'
 #' @param path target directory where to put the new blog
 #' @param ... template input rstudio
@@ -41,7 +43,7 @@ new_travel_blog <-function(path, ...){
 
   # copy the blog structure into the path
   source_directory <- system.file("blog", package = "tripdown")
-  dir_copy(source_directory, path)
+  dir_copy_to(source_directory, path)
 
 
 }
