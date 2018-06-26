@@ -2,13 +2,25 @@ Binding: new_travel_blog
 Title: Travel Blog
 OpenFiles: INDEX
 
-Parameter: text
+Parameter: title
 Widget: TextInput
-Label: Text Input
+Label: Title
 Default: Travel blog
 
-Parameter: file
-Widget: FileInput
-Label: Travel image
-Default: ~/
+Parameter: baseurl
+Widget: TextInput
+Label: url
+Default: /
+Position: right
+
+Parameter: author
+Widget: TextInput
+Label: Author
+Default: me
+Position: left
+
+Parameter: copyright
+Widget: TextInput
+Label: Copyright
+Default: me
 Position: right
