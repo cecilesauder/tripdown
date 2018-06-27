@@ -18,9 +18,3 @@ Widget: TextInput
 Label: Author
 Default: me
 Position: left
-
-Parameter: copyright
-Widget: TextInput
-Label: Copyright
-Default: me
-Position: right

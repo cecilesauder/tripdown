@@ -10,11 +10,10 @@
 #' @param path target directory where to put the new blog
 #' @param title blog title
 #' @param author blog author
-#' @param copyright blog copyright
 #' @param baseurl blog url
 #'
 
-new_travel_blog <-function(path, baseurl, title, author, copyright){
+new_travel_blog <-function(path, baseurl, title, author){
   # ensure path exists
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
 
@@ -26,7 +25,7 @@ new_travel_blog <-function(path, baseurl, title, author, copyright){
     "theme: well-traveled",
     'languageCode: "en-us"',
     paste0('authors: "', author, '"'),
-    paste0("copyright: '", copyright, "'"),
+    paste0("copyright: '", author, "'"),
     "params:",
     "  logo: img/compass-rose.svg",
     "favicon:",
