@@ -2,3 +2,8 @@ Name: New Trip
 Description: Create a new trip in the blog.
 Binding: new_trip_addin
 Interactive: true
+
+Name: New Post
+Description: Create a new post in the blog.
+Binding: new_trip_post_addin
+Interactive: true
