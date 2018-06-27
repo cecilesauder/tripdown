@@ -1,6 +1,6 @@
 Binding: new_travel_blog
 Title: Travel Blog
-OpenFiles: INDEX
+OpenFiles: config.yaml
 
 Parameter: title
 Widget: TextInput
