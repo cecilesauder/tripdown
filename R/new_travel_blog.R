@@ -36,7 +36,6 @@ new_travel_blog <-function(path, baseurl, title, author){
     "  title: Lost a page?",
     paste0("  text: We couldn't find anything under the address you requested. You may want to start from the <a href=", '"/"', ">homepage</a> or go back and try another link."),
     sep = "\n"
-
   )
   
   # copy the blog structure into the path
