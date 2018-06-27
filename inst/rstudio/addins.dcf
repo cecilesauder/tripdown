@@ -1,0 +1,4 @@
+Name: New Trip
+Description: Create a new trip in the blog.
+Binding: new_trip_addin
+Interactive: true

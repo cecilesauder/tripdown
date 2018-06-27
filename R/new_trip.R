@@ -12,7 +12,7 @@ new_trip <- function(trip_name, title, image){
     dir.create(paste0("content/",trip_name))
     dir.create(paste0("static/img/",trip_name))
 
-    file.copy(from = image, to = paste0("img/", trip_name, "/header.jpg"))
+    file.copy(from = image, to = paste0("static/img/", trip_name, "/header.jpg"))
 
     write(
       paste0(
@@ -22,7 +22,7 @@ new_trip <- function(trip_name, title, image){
     )
 
   }else{
-    print("a directory with the same date already exists")
+    print("a directory with the same name already exists")
   }
 
 }

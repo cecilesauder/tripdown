@@ -4,12 +4,16 @@
 \alias{new_travel_blog}
 \title{new_travel_blog}
 \usage{
-new_travel_blog(path, ...)
+new_travel_blog(path, baseurl, title, author)
 }
 \arguments{
 \item{path}{target directory where to put the new blog}
 
-\item{...}{template input rstudio}
+\item{baseurl}{blog url}
+
+\item{title}{blog title}
+
+\item{author}{blog author}
 }
 \description{
 Create a new travel blog
