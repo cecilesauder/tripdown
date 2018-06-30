@@ -10,7 +10,7 @@
 new_trip_post_addin <- function() {
   
   ui <- miniPage(
-    gadgetTitleBar("New Trip"),
+    gadgetTitleBar("New Post"),
     miniContentPanel(
       list_trip <- path_file( dir_ls("content/", type = "directory") ),
       selectInput("trip_name", label = "Select a trip :", choices = list_trip), 
