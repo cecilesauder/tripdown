@@ -3,6 +3,7 @@
 export(new_trip)
 export(new_trip_addin)
 export(new_trip_post)
+export(new_trip_post_addin)
 import(fs)
 import(magrittr)
 import(miniUI)
