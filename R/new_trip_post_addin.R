@@ -8,11 +8,10 @@
 #' @export
 #' 
 new_trip_post_addin <- function() {
-  
+  list_trip <- path_file( dir_ls("content/", type = "directory") )
   ui <- miniPage(
     gadgetTitleBar("New Post"),
     miniContentPanel(
-      list_trip <- path_file( dir_ls("content/", type = "directory") ),
       selectInput("trip_name", label = "Select a trip :", choices = list_trip), 
       textInput("title", label = "Post Title", value = "Brooklyn Heights"),
       textInput("date", label = "Date", value = Sys.Date()),
