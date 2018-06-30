@@ -41,7 +41,7 @@ new_travel_blog <-function(path, baseurl, title, author){
   # copy the blog structure into the path
   source_directory <- system.file("blog", package = "tripdown")
   dir_copy_to(source_directory, path)
-  
+  dir_create(path(path, "content"))
 
   # write to index file
   writeLines(contents, con = file.path(path, "config.yaml"))
