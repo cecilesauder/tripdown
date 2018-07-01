@@ -12,7 +12,7 @@
 #' @examples
 #' \dontrun{ new_trip_post("NYC_2018", "Brooklyn Heights")}
 new_trip_post <- function(trip_name, title, date = Sys.Date(), author = "me", tags){
-  if(!file.exists(paste0("content/", trip_name, "/", date, ".md"))){
+  if (!file.exists(paste0("content/", trip_name, "/", date, ".md"))) {
     write(
       paste0(
         "---\nauthor : ", author,
@@ -22,10 +22,10 @@ new_trip_post <- function(trip_name, title, date = Sys.Date(), author = "me", ta
           paste( "\ntags : ", paste(paste("\n  - ", tags), collapse = ""))
         },
         "\ngallery : img/",  trip_name, "/", date,
-        "\n---"
+        "\n---\n\n"
       ), file= paste0("content/", trip_name, "/", date, ".md")
     )
-  }else{
+  } else {
     print("a post with the same date already exists")
   }
 

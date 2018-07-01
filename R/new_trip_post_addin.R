@@ -13,9 +13,9 @@ new_trip_post_addin <- function() {
     gadgetTitleBar("New Post"),
     miniContentPanel(
       selectInput("trip_name", label = "Select a trip :", choices = list_trip), 
-      textInput("title", label = "Post Title", value = "Brooklyn Heights"),
+      textInput("title", label = "Post Title", value = ""),
       textInput("date", label = "Date", value = Sys.Date()),
-      textInput("author", label = "Author", value = "me"), 
+      textInput("author", label = "Author", value = ""), 
       selectizeInput("tags", label = "Tags", multiple = TRUE, choices = NULL, options = list(create = TRUE))
     )
   )
@@ -24,6 +24,11 @@ new_trip_post_addin <- function() {
     
     # Listen for 'done' events. 
     observeEvent(input$done, {
+      validate(
+        need(input$title != ""), 
+        need(input$author != "")
+      )
+      
       image <- input$header
       tags <- input$tags
       new_trip_post(trip_name = input$trip_name, 
