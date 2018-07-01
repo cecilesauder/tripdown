@@ -15,20 +15,22 @@ new_trip_post_addin <- function() {
       selectInput("trip_name", label = "Select a trip :", choices = list_trip), 
       textInput("title", label = "Post Title", value = "Brooklyn Heights"),
       textInput("date", label = "Date", value = Sys.Date()),
-      textInput("author", label = "Author", value = "me")
+      textInput("author", label = "Author", value = "me"), 
+      selectizeInput("tags", label = "Tags", multiple = TRUE, choices = NULL, options = list(create = TRUE))
     )
   )
   
   server <- function(input, output, session) {
     
-    
     # Listen for 'done' events. 
     observeEvent(input$done, {
       image <- input$header
+      tags <- input$tags
       new_trip_post(trip_name = input$trip_name, 
                     date = input$date, 
                     title = input$title,
-                    author = input$author)
+                    author = input$author, 
+                    tags = tags)
       stopApp()
     })
     
