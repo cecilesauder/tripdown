@@ -1,4 +1,4 @@
-{{ if isset .Params "tags" }}
+{{ if .Params.tags }}
 {{ $count := len .Params.tags }}
 {{ if gt $count 0}}
 <p class="meta-tags">
