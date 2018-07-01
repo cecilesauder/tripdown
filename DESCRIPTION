@@ -15,4 +15,5 @@ Imports:
     magrittr,
     purrr,
     miniUI,
-    shiny
+    shiny,
+    rstudioapi

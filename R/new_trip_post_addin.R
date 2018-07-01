@@ -25,8 +25,8 @@ new_trip_post_addin <- function() {
     # Listen for 'done' events. 
     observeEvent(input$done, {
       validate(
-        need(input$title != ""), 
-        need(input$author != "")
+        need(input$title, ""), 
+        need(input$author, "")
       )
       
       image <- input$header
