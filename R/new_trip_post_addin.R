@@ -12,15 +12,37 @@ new_trip_post_addin <- function() {
   ui <- miniPage(
     gadgetTitleBar("New Post"),
     miniContentPanel(
-      selectInput("trip_name", label = "Select a trip :", choices = list_trip), 
-      textInput("title", label = "Post Title", value = ""),
-      textInput("date", label = "Date", value = Sys.Date()),
-      textInput("author", label = "Author", value = ""), 
-      selectizeInput("tags", label = "Tags", multiple = TRUE, choices = NULL, options = list(create = TRUE))
+      splitLayout(
+        selectInput("trip_name", label = "Select a trip :", choices = list_trip), 
+        textInput("title", label = "Post Title", value = "")
+      ),
+      splitLayout(
+        textInput("date", label = "Date", value = Sys.Date()),
+        textInput("author", label = "Author", value = ""), 
+        selectizeInput("tags", label = "Tags", multiple = TRUE, choices = NULL, options = list(create = TRUE))
+      ),
+      textOutput("problems")
     )
   )
   
   server <- function(input, output, session) {
+    
+    ok <- reactive({
+      input$title != "" && input$author != ""
+    })
+    
+    observe({
+      shinyjs::toggle("done", ok())
+    })
+    
+    output$problems <- renderText({
+      msg <- ""
+      
+      if(input$title  == "") msg <- paste(msg, "need title. ")
+      if(input$author == "") msg <- paste(msg, "need author. ")
+      
+      msg
+    })
     
     # Listen for 'done' events. 
     observeEvent(input$done, {

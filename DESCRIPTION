@@ -16,4 +16,5 @@ Imports:
     purrr,
     miniUI,
     shiny,
-    rstudioapi
+    rstudioapi,
+    ggmap

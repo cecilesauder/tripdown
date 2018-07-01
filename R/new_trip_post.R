@@ -12,25 +12,25 @@
 #' @examples
 #' \dontrun{ new_trip_post("NYC_2018", "Brooklyn Heights")}
 new_trip_post <- function(trip_name, title, date = Sys.Date(), author = "me", tags){
-  md_file <- paste0("content/", trip_name, "/", date, ".md")
-  if (!file.exists(md_file)) {
-    write(
-      paste0(
-        "---\nauthor : ", author,
-        "\ndate : ", date,
-        "\ntitle : ", title,
-        if(length(tags) > 0){
-          paste( "\ntags : ", paste(paste("\n  - ", tags), collapse = ""))
-        },
-        "\ngallery : img/",  trip_name, "/", date,
-        "\n---\n\n"
-      ), file = md_file
-    )
-  } else {
-    print("a post with the same date already exists")
+  slug <- paste0(date, "-", stringr::str_replace_all(stringr::str_to_lower(title), "[^[a-zA-Z0-9]]", "-"))
+  md_file <- paste0("content/", trip_name, "/", slug, ".md")
+  if (file.exists(md_file)) {
+    stop("a post with the same date and title already exists")
   }
-
-  rstudioapi::navigateToFile(md_file)
+    
+  write(
+    paste0(
+      "---\nauthor : ", author,
+      "\ndate : ", date,
+      "\ntitle : ", title,
+      if(length(tags) > 0){
+        paste( "\ntags : ", paste(paste("\n  - ", tags), collapse = ""))
+      },
+      "\ngallery : img/", trip_name, "/", slug,
+      "\n---\n\n"
+    ), file = md_file
+  )
+  dir.create(paste0("static/img/", trip_name, "/", slug), recursive = TRUE)
   
-  dir.create(paste0("static/img/", trip_name, "/", date))
+  rstudioapi::navigateToFile(md_file)
 }
