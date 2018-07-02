@@ -45,14 +45,13 @@
                       {{ $gallery := .Params.gallery }}
                       {{ $header := (printf "%s/header.jpg"  $gallery ) }}
                       
-                      {{ if( fileExists $header) }}
                       <div class="entry__summary__gallery">
                         <a href="{{ .Permalink }}">
                           <img src="{{ $gallery }}/header.jpg" width="100%"></img>
                         </a>
                       </div>
                       {{ end }}
-                      {{ end }}
+
                     
                     </div>
                 </article>
