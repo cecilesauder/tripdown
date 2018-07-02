@@ -21,7 +21,9 @@ new_trip_post_addin <- function() {
         textInput("author", label = "Author", value = ""), 
         selectizeInput("tags", label = "Tags", multiple = TRUE, choices = NULL, options = list(create = TRUE))
       ),
-      textOutput("problems")
+      textOutput("problems"),
+      fileInput("header", label = "Post Header Image", buttonLabel = "Select image...")
+      
     )
   )
   
@@ -57,7 +59,9 @@ new_trip_post_addin <- function() {
                     date = input$date, 
                     title = input$title,
                     author = input$author, 
-                    tags = tags)
+                    tags = tags,
+                    header = image$datapath)
+
       stopApp()
     })
     
