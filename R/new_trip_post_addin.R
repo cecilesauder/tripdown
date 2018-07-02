@@ -21,8 +21,8 @@ new_trip_post_addin <- function() {
         textInput("author", label = "Author", value = ""), 
         selectizeInput("tags", label = "Tags", multiple = TRUE, choices = NULL, options = list(create = TRUE))
       ),
-      textOutput("problems"),
-      fileInput("header", label = "Post Header Image", buttonLabel = "Select image...")
+      fileInput("header", label = "Post Header Image", buttonLabel = "Select image..."),
+      textOutput("problems")
       
     )
   )
@@ -40,8 +40,8 @@ new_trip_post_addin <- function() {
     output$problems <- renderText({
       msg <- ""
       
-      if(input$title  == "") msg <- paste(msg, "need title. ")
-      if(input$author == "") msg <- paste(msg, "need author. ")
+      if(input$title  == "") msg <- paste(msg, "NEED TITLE. ")
+      if(input$author == "") msg <- paste(msg, "NEED AUTHOR. ")
       
       msg
     })
@@ -69,7 +69,7 @@ new_trip_post_addin <- function() {
   
   # We'll use a pane viwer, and set the minimum height at
   # 300px to ensure we get enough screen space to display the clock.
-  viewer <- paneViewer(300)
+  viewer <- dialogViewer("New Post", 500, 400)
   runGadget(ui, server, viewer = viewer)
   
 }

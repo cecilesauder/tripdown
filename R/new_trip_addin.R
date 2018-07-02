@@ -34,7 +34,7 @@ new_trip_addin <- function() {
   
   # We'll use a pane viwer, and set the minimum height at
   # 300px to ensure we get enough screen space to display the clock.
-  viewer <- paneViewer(300)
+  viewer <- dialogViewer("New Trip", 500, 400)
   runGadget(ui, server, viewer = viewer)
   
 }
