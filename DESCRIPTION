@@ -17,4 +17,5 @@ Imports:
     miniUI,
     shiny,
     rstudioapi,
-    ggmap
+    ggmap,
+    glue
