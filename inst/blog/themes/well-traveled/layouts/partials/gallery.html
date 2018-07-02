@@ -17,9 +17,7 @@
   {{ $files := readDir $sourcePath }}
   {{ range $files }}
     {{ if ne .Name ".DS_Store" }}
-      {{ if ne .Name "header.jpg" }}
-        <a href="{{ $gallery }}/{{ .Name }}"></a>
-      {{ end }}
+          <a href="{{ $gallery }}/{{ .Name }}"></a>
     {{ end }}
   {{ end }}
 

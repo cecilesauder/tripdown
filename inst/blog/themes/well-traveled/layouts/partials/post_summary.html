@@ -19,7 +19,7 @@
 {{ end }}
 
 <div class="entry__summary text">
-    {{ slicestr .Summary  | plainify | safeHTML }}
+  {{ slicestr .Summary 0 150  | plainify | safeHTML }}
     <a class="read_more" href="{{ .Permalink }}">&nbsp;&nbsp;(... Read more ...)</a>
 </div>
             

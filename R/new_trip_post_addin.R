@@ -22,6 +22,7 @@ new_trip_post_addin <- function() {
         selectizeInput("tags", label = "Tags", multiple = TRUE, choices = NULL, options = list(create = TRUE))
       ),
       fileInput("header", label = "Post Header Image", buttonLabel = "Select image..."),
+      textInput("map", label = "Location", placeholder = "Where ?"),
       textOutput("problems")
       
     )
@@ -60,7 +61,8 @@ new_trip_post_addin <- function() {
                     title = input$title,
                     author = input$author, 
                     tags = tags,
-                    header = image$datapath)
+                    header = image$datapath,
+                    place = input$map)
 
       stopApp()
     })

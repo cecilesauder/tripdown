@@ -5,7 +5,7 @@ text_map <- function(lng, lat, place){
 library(leaflet)
 m <- leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
-  addMarkers(lng=lng, lat=lat, popup=place)
+  addMarkers(lng={lng}, lat={lat}, popup='{place}')
 m
 ```
 "
