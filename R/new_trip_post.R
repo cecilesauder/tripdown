@@ -14,7 +14,7 @@
 
 new_trip_post <- function(trip_name, title, date = Sys.Date(), author = "me", header, tags, place){
   slug <- paste0(date, "-", stringr::str_replace_all(stringr::str_to_lower(title), "[^[a-zA-Z0-9]]", "-"))
-  md_file <- paste0("content/", trip_name, "/", slug, ".rmd")
+  md_file <- paste0("content/", trip_name, "/", slug, ".Rmd")
   if (file.exists(md_file)) {
     stop("a post with the same date and title already exists")
   }
