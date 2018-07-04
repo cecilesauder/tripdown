@@ -4,7 +4,8 @@
 \alias{new_trip_post}
 \title{new_trip_post}
 \usage{
-new_trip_post(trip_name, title, date = Sys.Date(), author = "me", tags)
+new_trip_post(trip_name, title, date = Sys.Date(), author = "me", header,
+  tags, place)
 }
 \arguments{
 \item{trip_name}{short name of the trip}
@@ -14,6 +15,8 @@ new_trip_post(trip_name, title, date = Sys.Date(), author = "me", tags)
 \item{date}{date in standard format "2018-04-01" (default = date of the day)}
 
 \item{author}{author's name (default = "me")}
+
+\item{header}{image for the post}
 
 \item{tags}{tags}
 }

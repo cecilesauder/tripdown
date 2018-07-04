@@ -7,3 +7,8 @@ Name: New Post
 Description: Create a new post in the blog.
 Binding: new_trip_post_addin
 Interactive: true
+
+Name: Open Gallery
+Description: Open the gallery of the post that is currently open
+Binding: open_gallery
+Interactive: false

@@ -18,4 +18,5 @@ Imports:
     shiny,
     rstudioapi,
     ggmap,
-    glue
+    glue,
+    stringr
