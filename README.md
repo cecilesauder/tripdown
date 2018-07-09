@@ -8,7 +8,18 @@ You can install it via GitHub with :
 
 ```r
 devtools::install_github('cecilesauder/tripdown')
+
+library(tripdown)
 ```
 
-## Create a travel blog
+![](inst/documentation/readme1.png)
+
+![](inst/documentation/readme2.png)
+
+![](inst/documentation/readme3.png)
+
+![](inst/documentation/readme4.png)
+
+![](inst/documentation/readme5.png)
+
 
