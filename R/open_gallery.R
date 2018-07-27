@@ -1,3 +1,9 @@
+#' open_dir
+#'
+#' To open the post directory to put the photos
+#'
+#'@param dir optional directory to open, current directory by default
+
 # https://stackoverflow.com/questions/12135732/how-to-open-working-directory-directly-from-r-console
 opendir <- function(dir = getwd()){
   if (.Platform['OS.type'] == "windows"){
@@ -7,6 +13,10 @@ opendir <- function(dir = getwd()){
   }
 }
 
+#' open_gallery
+#'
+#' Addin to open the post directory to put the photos for the gallery post
+#'
 #' @import stringr
 #' @importFrom glue glue
 #' @export
