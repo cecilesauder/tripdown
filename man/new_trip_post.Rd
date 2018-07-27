@@ -19,6 +19,8 @@ new_trip_post(trip_name, title, date = Sys.Date(), author = "me", header,
 \item{header}{image for the post}
 
 \item{tags}{tags}
+
+\item{place}{name place, location to put in the post map}
 }
 \description{
 Create a new post for a trip in the blog

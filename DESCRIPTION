@@ -19,4 +19,9 @@ Imports:
     rstudioapi,
     ggmap,
     glue,
-    stringr
+    stringr,
+    magick,
+    assertthat,
+    progress,
+    exiv,
+    dplyr

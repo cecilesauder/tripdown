@@ -8,6 +8,7 @@
 #' @param tags tags
 #' @param author author's name (default = "me")
 #' @param header image for the post
+#' @param place name place, location to put in the post map
 #' @export
 #' @examples
 #' \dontrun{ new_trip_post("NYC_2018", "Brooklyn Heights")}
